@@ -126,6 +126,13 @@
       box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
     }
 
+    .trust-badge {
+      color: #94a3b8;
+      font-size: 13px;
+      margin-top: 16px;
+      font-weight: 500;
+    }
+
     /* Comparison Section */
     .comparison-section {
       max-width: 1100px;
@@ -144,6 +151,12 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 24px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
 
     .card {
@@ -223,11 +236,36 @@
       color: #cbd5e1;
     }
 
+    /* Deliverables Section */
+    .deliverables-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 20px 60px 20px;
+    }
+
+    .deliverable-card {
+      background: #111c44;
+      padding: 24px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .deliverable-card h4 {
+      color: #60a5fa;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .deliverable-card p {
+      color: #cbd5e1;
+      font-size: 13px;
+    }
+
     /* Pricing Section */
     .pricing-section {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 40px 20px 80px 20px;
+      padding: 40px 20px 60px 20px;
       text-align: center;
     }
 
@@ -264,9 +302,40 @@
       color: #94a3b8;
     }
 
+    /* FAQ Section */
+    .faq-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px 20px 80px 20px;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-card {
+      background: #111c44;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .faq-card h4 {
+      font-size: 15px;
+      margin-bottom: 6px;
+      color: #ffffff;
+    }
+
+    .faq-card p {
+      color: #cbd5e1;
+      font-size: 13px;
+    }
+
     @media (max-width: 768px) {
       .hero-title { font-size: 34px; }
-      .grid-2, .grid-4 { grid-template-columns: 1fr; }
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -289,6 +358,7 @@
       Stop burning primary domain reputation. We engineer dedicated, fully authenticated secondary email networks, automated DNS failovers, and deliverability pipelines for B2B sales teams scaling outbound.
     </p>
     <a href="https://cal.com/vynixops" class="cta-btn" target="_blank" rel="noopener noreferrer">Book an Infrastructure Audit</a>
+    <p class="trust-badge">🔒 100% Asset Ownership • Sub-2% Bounce Guarantee • Zero Setup Friction</p>
   </section>
 
   <!-- Comparison Section -->
@@ -341,7 +411,26 @@
     </div>
   </section>
 
-  <!-- Transparent Operations Section -->
+  <!-- Deliverables Breakdown Section -->
+  <section class="deliverables-section">
+    <h2 class="section-title">What Every Build Includes</h2>
+    <div class="grid-3">
+      <div class="deliverable-card">
+        <h4>Domain & Inbox Warmup</h4>
+        <p>Custom warmup schedules engineered specifically for Google Workspace & Microsoft 365 deliverability.</p>
+      </div>
+      <div class="deliverable-card">
+        <h4>DNS Authentication</h4>
+        <p>Full SPF, DKIM, and strict DMARC enforcement with custom tracking domain CNAME mapping.</p>
+      </div>
+      <div class="deliverable-card">
+        <h4>Automated Monitoring</h4>
+        <p>24/7 Blacklist checks, inbox rotation, and continuous health tracking to protect sender score.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
   <section class="pricing-section">
     <h2 class="section-title">Transparent Operations</h2>
     <div class="pricing-card">
@@ -350,6 +439,21 @@
       <p class="pricing-subtext">Initial 90-day execution window, rolling 30-day agreement thereafter.</p>
       <a href="https://cal.com/vynixops" class="cta-btn" style="width: 100%; display: block;" target="_blank" rel="noopener noreferrer">Schedule Setup Call</a>
       <p class="pricing-footnote">*Domain registrations and Google Workspace seat costs are billed directly to your corporate card so you retain 100% asset ownership.</p>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-card">
+        <h4>How fast is the infrastructure ready to send?</h4>
+        <p>Full setup takes 48 hours, followed by a mandatory 14-to-21 day automated warmup protocol to guarantee inbox placement.</p>
+      </div>
+      <div class="faq-card">
+        <h4>Who owns the domains and accounts?</h4>
+        <p>You retain 100% ownership. Domain registrations and Google Workspace/Microsoft seats are registered directly under your corporate accounts.</p>
+      </div>
     </div>
   </section>
 
