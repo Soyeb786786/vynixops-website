@@ -62,11 +62,12 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 14px;
-      transition: background 0.2s ease;
+      transition: all 0.2s ease;
     }
 
     .nav-btn:hover {
       background: #1d4ed8;
+      transform: translateY(-1px);
     }
 
     /* Hero Section */
@@ -101,7 +102,7 @@
 
     .hero-subtitle {
       font-size: 16px;
-      color: #94a3b8;
+      color: #cbd5e1;
       max-width: 750px;
       margin: 0 auto 32px auto;
     }
@@ -116,6 +117,13 @@
       font-weight: 700;
       font-size: 15px;
       box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+      transition: all 0.2s ease;
+    }
+
+    .cta-btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
     }
 
     /* Comparison Section */
@@ -142,7 +150,7 @@
       background: #111c44;
       padding: 32px;
       border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .card-trap {
@@ -185,6 +193,10 @@
       color: #60a5fa;
       font-weight: 600;
       margin-bottom: 32px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
     .grid-4 {
@@ -197,17 +209,18 @@
       background: #111c44;
       padding: 20px;
       border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .arch-card h4 {
       font-size: 15px;
       margin-bottom: 8px;
+      color: #ffffff;
     }
 
     .arch-card p {
-      font-size: 12px;
-      color: #94a3b8;
+      font-size: 13px;
+      color: #cbd5e1;
     }
 
     /* Pricing Section */
@@ -240,15 +253,15 @@
     }
 
     .pricing-subtext {
-      font-size: 12px;
-      color: #64748b;
+      font-size: 13px;
+      color: #cbd5e1;
       margin-bottom: 24px;
     }
 
     .pricing-footnote {
       margin-top: 16px;
-      font-size: 11px;
-      color: #64748b;
+      font-size: 12px;
+      color: #94a3b8;
     }
 
     @media (max-width: 768px) {
@@ -306,7 +319,7 @@
   <section class="arch-section">
     <h2 class="section-title">Technical Architecture</h2>
     <div class="arch-pipeline">
-      Secondary Domains &nbsp;➔&nbsp; SPF/DKIM/DMARC Alignment &nbsp;➔&nbsp; Custom Tracking (inst.*) &nbsp;➔&nbsp; Smart Rotation &nbsp;➔&nbsp; Prospect Inbox
+      <span>Secondary Domains</span> <span>➔</span> <span>SPF/DKIM/DMARC Alignment</span> <span>➔</span> <span>Custom Tracking (inst.*)</span> <span>➔</span> <span>Smart Rotation</span> <span>➔</span> <span>Prospect Inbox</span>
     </div>
     <div class="grid-4">
       <div class="arch-card">
