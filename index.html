@@ -1,92 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VynixOps | Enterprise Cold Email Infrastructure</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background-color: #0B0F17; color: #F8FAFC; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; padding: 20px; }
-        .container { max-width: 1100px; margin: 0 auto; text-align: center; }
-        header { padding: 60px 0 40px; }
-        .badge { background: #1E293B; color: #38BDF8; font-size: 11px; font-weight: bold; padding: 6px 14px; border-radius: 20px; border: 1px solid #0284C7; display: inline-block; margin-bottom: 20px; letter-spacing: 1px; }
-        h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 800; color: #FFF; margin-bottom: 20px; line-height: 1.2; }
-        p.subhead { font-size: clamp(16px, 2.5vw, 18px); color: #94A3B8; max-width: 750px; margin: 0 auto 30px; }
-        .btn { background: #2563EB; color: #FFF; padding: 14px 28px; border-radius: 8px; font-weight: bold; text-decoration: none; display: inline-block; }
-        section { padding: 50px 0; border-top: 1px solid #1E293B; }
-        h2 { font-size: 28px; margin-bottom: 30px; }
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; text-align: left; }
-        .card-diy { background: #161B26; padding: 25px; border-radius: 12px; border: 1px solid #7F1D1D; }
-        .card-vynix { background: #161B26; padding: 25px; border-radius: 12px; border: 1px solid #1E40AF; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 12px; color: #CBD5E1; }
-        .arch-box { background: #011627; border: 1px solid #1E40AF; padding: 18px; border-radius: 8px; color: #38BDF8; font-family: monospace; margin-bottom: 25px; font-size: 14px; overflow-x: auto; font-weight: 600; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; text-align: left; }
-        .feature-card { background: #161B26; padding: 20px; border-radius: 8px; border: 1px solid #1E293B; }
-        .pricing-card { background: #161B26; border: 1px solid #3B82F6; border-radius: 16px; padding: 35px 20px; max-width: 600px; margin: 0 auto; }
-        .price { font-size: 32px; font-weight: bold; color: #3B82F6; margin: 15px 0; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VynixOps | Enterprise Cold Email Infrastructure</title>
+  
+  <!-- Favicon / Browser Tab Icon -->
+  <link rel="icon" type="image/png" href="/logo.png">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #0b132b;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    /* Top Navigation Header Bar */
+    header {
+      width: 100%;
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #0b132b;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      height: 36px;
+      width: 36px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-btn {
+      background: #2563eb;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: background 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      background: #1d4ed8;
+    }
+
+    /* Hero Section */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(37, 99, 235, 0.4);
+      color: #60a5fa;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 24px;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: #94a3b8;
+      max-width: 750px;
+      margin: 0 auto 36px auto;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: #2563eb;
+      color: #ffffff;
+      padding: 16px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+    }
+
+    /* Grid Section */
+    .comparison-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 80px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .card {
+      background: #111c44;
+      padding: 32px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .card-trap {
+      border-top: 4px solid #ef4444;
+    }
+
+    .card-engine {
+      border-top: 4px solid #2563eb;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .card ul {
+      list-style: none;
+    }
+
+    .card ul li {
+      margin-bottom: 12px;
+      color: #cbd5e1;
+      font-size: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title { font-size: 36px; }
+      .grid { grid-template-columns: 1fr; }
+      header { padding: 16px 20px; }
+    }
+  </style>
 </head>
 <body>
-    <header style="width: 100%; padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; background: #0b132b; border-bottom: 1px solid rgba(255,255,255,0.1);">
-  <div style="display: flex; align-items: center; gap: 12px;">
-    <img src="/favicon.ico" alt="VynixOps Logo" style="height: 36px; width: 36px; object-fit: contain;">
-    <span style="color: #ffffff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; font-family: sans-serif;">VynixOps</span>
-  </div>
-  <a href="https://cal.com/your-link" style="background: #2563eb; color: #ffffff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; font-family: sans-serif;">Book Audit</a>
-</header>
-    <div class="container">
-        <header>
-            <div class="badge">ENTERPRISE COLD EMAIL INFRASTRUCTURE</div>
-            <h1>We Build & Manage Cold Outreach Infrastructure That Never Hits Spam.</h1>
-            <p class="subhead">Stop burning primary domain reputation. We engineer dedicated, fully authenticated secondary email networks, automated DNS failovers, and deliverability pipelines for B2B sales teams scaling outbound.</p>
-            <a href="https://cal.com/vynixops" class="btn" target="_blank">Book an Infrastructure Audit</a>
-        </header>
 
-        <section>
-            <h2>Why B2B Teams Choose VynixOps</h2>
-            <div class="grid-2">
-                <div class="card-diy">
-                    <h3 style="color: #EF4444; margin-bottom: 15px;">The DIY / In-House Trap</h3>
-                    <ul>
-                        <li><strong>Burned Primary Domains:</strong> Risking core Google Workspace reputation on unproven setups.</li>
-                        <li><strong>DNS Errors:</strong> Weeks wasted wrestling with Cloudflare, DKIM, and CTD errors manually.</li>
-                        <li><strong>Silent Spam Drops:</strong> Losing high-value pipeline because deliverability drops undetected.</li>
-                    </ul>
-                </div>
-                <div class="card-vynix">
-                    <h3 style="color: #3B82F6; margin-bottom: 15px;">VynixOps Managed Engine</h3>
-                    <ul>
-                        <li><strong>100% Domain Isolation:</strong> Dedicated secondary domains shielding your primary brand.</li>
-                        <li><strong>Turnkey Protocol Build:</strong> Complete SPF, DKIM, strict DMARC p=quarantine, and custom tracking.</li>
-                        <li><strong>Active Deliverability Guard:</strong> Daily health tracking, automated inbox rotation, and spam trap avoidance.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+  <!-- Top Header Navigation -->
+  <header>
+    <a href="/" class="brand-container">
+      <img src="/logo.png" alt="VynixOps Logo" class="brand-logo">
+      <span class="brand-name">VynixOps</span>
+    </a>
+    <a href="https://cal.com/your-link" class="nav-btn">Book Audit</a>
+  </header>
 
-        <section>
-            <h2>Technical Architecture</h2>
-            <div class="arch-box">Secondary Domains ➔ SPF/DKIM/DMARC Alignment ➔ Custom Tracking (inst.*) ➔ Smart Rotation ➔ Prospect Inbox</div>
-            <div class="grid-4">
-                <div class="feature-card"><h4 style="color: #FFF;">Domain Provisioning</h4><p style="color:#94A3B8; font-size:13px;">Dedicated secondary routing preventing reputation leakage.</p></div>
-                <div class="feature-card"><h4 style="color: #FFF;">Protocol Enforcement</h4><p style="color:#94A3B8; font-size:13px;">Strict DMARC p=quarantine alignment & MX rules.</p></div>
-                <div class="feature-card"><h4 style="color: #FFF;">Custom Tracking</h4><p style="color:#94A3B8; font-size:13px;">Isolated tracking pixels routed through CNAME records.</p></div>
-                <div class="feature-card"><h4 style="color: #FFF;">List Hygiene</h4><p style="color:#94A3B8; font-size:13px;">Pre-send verification keeping hard bounce rates under 2%.</p></div>
-            </div>
-        </section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="badge">Enterprise Cold Email Infrastructure</div>
+    <h1 class="hero-title">We Build & Manage Cold Outreach Infrastructure That Never Hits Spam.</h1>
+    <p class="hero-subtitle">
+      Stop burning primary domain reputation. We engineer dedicated, fully authenticated secondary email networks, automated DNS failovers, and deliverability pipelines for B2B sales teams scaling outbound.
+    </p>
+    <a href="https://cal.com/your-link" class="cta-btn">Book an Infrastructure Audit</a>
+  </section>
 
-        <section>
-            <h2>Transparent Operations</h2>
-            <div class="pricing-card">
-                <h3>Turnkey Infrastructure & Maintenance</h3>
-                <div class="price">$2,500 <span style="font-size:16px; color:#94A3B8;">Setup</span> + $1,700<span style="font-size:16px; color:#94A3B8;">/mo</span></div>
-                <p style="color: #64748B; font-size: 13px; margin-bottom: 20px;">Initial 90-day execution window, rolling 30-day agreement thereafter.</p>
-                <a href="https://cal.com/vynixops" class="btn" style="width: 100%; text-align: center;" target="_blank">Schedule Setup Call</a>
-                <p style="color: #94A3B8; font-size: 12px; margin-top: 15px;">*Domain registrations and Google Workspace seat costs are billed directly to your corporate card so you retain 100% asset ownership.</p>
-            </div>
-        </section>
+  <!-- Comparison Section -->
+  <section class="comparison-section">
+    <h2 class="section-title">Why B2B Teams Choose VynixOps</h2>
+    <div class="grid">
+      <div class="card card-trap">
+        <h3 style="color: #f87171;">The DIY / In-House Trap</h3>
+        <ul>
+          <li>• <strong>Burned Primary Domains:</strong> Risking core Google Workspace reputation.</li>
+          <li>• <strong>Manual DNS Misconfigurations:</strong> Broken SPF, DKIM, and DMARC rules hitting spam filters.</li>
+          <li>• <strong>Unverified Data Leads:</strong> High bounce rates causing immediate domain burn.</li>
+        </ul>
+      </div>
+
+      <div class="card card-engine">
+        <h3 style="color: #60a5fa;">VynixOps Managed Engine</h3>
+        <ul>
+          <li>• <strong>100% Domain Isolation:</strong> Dedicated secondary domains shielding primary assets.</li>
+          <li>• <strong>Full SPF/DKIM/DMARC Protocols:</strong> 2048-bit encryption keys and custom tracking alignment.</li>
+          <li>• <strong>Sub-2% Bounce Guarantee:</strong> Multi-stage verified B2B prospect extraction.</li>
+        </ul>
+      </div>
     </div>
+  </section>
+
 </body>
 </html>
